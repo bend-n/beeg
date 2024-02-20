@@ -37,5 +37,6 @@ fn main() -> ExitCode {
     };
     let exponent = TAB[mat.get(2).unwrap().into()];
     println!("{}e+{exponent}", mat.get(1).unwrap().as_str());
+    clipp::copy(format!("{}e+{exponent}", mat.get(1).unwrap().as_str()));
     ExitCode::SUCCESS
 }
