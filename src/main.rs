@@ -14,7 +14,7 @@ static TAB: phf::Map<&str, u16> = phf::phf_map! {
     "undec" => 36,
     "duodec" => 39,
     "tredec" => 42,
-    "quattourdec" => 45,
+    "quattuordec" => 45,
     "quindec" => 48,
     "sexdec" => 51,
     "septendec" => 54,
@@ -25,7 +25,7 @@ static TAB: phf::Map<&str, u16> = phf::phf_map! {
 };
 
 fn main() -> ExitCode {
-    let re = regex::Regex::new(r"([0-9]+(?:\.[0-9]+)?)[^\S]*(m|b|tr|quad|quint|sext|sept|oct|non|dec|undec|duodec|tredec|quattourdec|quindec|sexdec|septendec|octodecc|novemdec|vigint|cent)illion").unwrap();
+    let re = regex::Regex::new(r"([0-9]+(?:\.[0-9]+)?)[^\S]*(m|b|tr|quad|quint|sext|sept|oct|non|dec|undec|duodec|tredec|quattuordec|quindec|sexdec|septendec|octodecc|novemdec|vigint|cent)illion").unwrap();
     let Some(x) = std::env::args().skip(1).reduce(|acc, x| acc + &x) else {
         comat::cprintln!("{red}require argument{reset}");
         return ExitCode::FAILURE;
